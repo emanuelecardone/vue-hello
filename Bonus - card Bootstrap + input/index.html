@@ -33,7 +33,7 @@
                 </div>
                 <div :class="formClass">
                     <label :for="labelFor" :class="labelClass">{{labelContent}}<br>{{imagesNames}}</label>
-                    <input :type="inputType" :class="inputClass" :id="labelFor" :aria-describedby="inputAriaDescribedBy" v-model="inputContent">
+                    <input :type="inputType" :class="inputClass" :id="labelFor" :aria-describedby="inputAriaDescribedBy" v-model="inputContent" :placeholder="inputPlaceHolder">
                     <div :id="inputAriaDescribedBy" :class="helpClass">You're typing: {{inputContent}}</div>
                     <a @click="switchImage" :href="cardBtnHref" :class="cardBtnClass">{{othersBtnContent}}</a>
                 </div>

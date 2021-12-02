@@ -23,6 +23,7 @@ const app = new Vue(
             inputType: 'text',
             inputClass: 'form-control',
             inputAriaDescribedBy: 'textHelp',
+            inputPlaceHolder: 'Type the index here',
             helpClass: 'form-text mb-3',
             fluidClass: 'container-fluid',
             rowClass: 'row row-cols-4',
