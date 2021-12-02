@@ -25,11 +25,37 @@
         <main class="w-100 bg-info d-flex justify-content-center align-items-center">
 
             <div :class="cardClass" :style="cardStyle">
-                <img :src="imageSrc" :class="imageClass" :alt="imageAlt">
+                <img :src="mainImageSrc" :class="mainImageClass" :alt="mainImageAlt">
                 <div :class="cardBodyClass">
                     <h5 :class="cardTitleClass">{{cardTitleContent}}</h5>
                     <p :class="cardTextClass">{{cardTextContent}}</p>
-                    <a :href="cardBtnHref" :class="cardBtnClass">{{cardBtnContent}}</a>
+                    <a @click="showFormAndOthers" :href="cardBtnHref" :class="cardBtnClass">{{cardBtnContent}}</a>
+                </div>
+                <div :class="formClass">
+                    <label :for="labelFor" :class="labelClass">Email address</label>
+                    <input :type="inputType" :class="inputClass" :id="labelFor" :aria-describedby="inputAriaDescribedBy">
+                    <div :id="inputAriaDescribedBy" :class="helpClass">We'll never share your email with anyone else.</div>
+                </div>
+                <div :class="othersClass">
+                    <div :class="fluidClass">
+                        <div :class="rowClass">
+                            <div :class="colClass">
+                                <div :class="othersWrapperClass">
+                                    <img :class="othersImageClass" :src="secondOtherImageSrc" :alt="secondOtherImageAlt">
+                                </div>
+                            </div>
+                            <div :class="colClass">
+                                <div :class="othersWrapperClass">
+                                    <img :class="othersImageClass" :src="thirdOtherImageSrc" :alt="thirdOtherImageAlt">
+                                </div>
+                            </div>
+                            <div :class="colClass">
+                                <div :class="othersWrapperClass">
+                                    <img :class="othersImageClass" :src="fourthOtherImageSrc" :alt="fourthOtherImageAlt">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 

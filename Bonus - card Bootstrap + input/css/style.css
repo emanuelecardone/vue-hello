@@ -1,3 +1,11 @@
 main{
     height: calc(100vh - 150px);
 }
+.btn:focus{
+    box-shadow: none;
+}
+.form_wrapper,
+.other_images_main_wrapper{
+    padding: 1rem 1rem;
+    
+}
