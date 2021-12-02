@@ -8,7 +8,7 @@ Vue.config.devtools = true;
 const app = new Vue(
     {
         el: '#root',
-        data:{
+        data: {
             titleContent: 'Ciao sono un titolo H1',
             imageSource: 'img/niagara.jpg',
             imageAlt: 'Cascate del Niagara',
