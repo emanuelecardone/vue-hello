@@ -25,10 +25,12 @@ const app = new Vue(
             inputAriaDescribedBy: 'textHelp',
             helpClass: 'form-text',
             fluidClass: 'container-fluid',
-            rowClass: 'row row-cols-3',
+            rowClass: 'row row-cols-4',
             colClass: 'col',
             othersWrapperClass: 'other_images_sub_wrapper w-100 h-100',
             othersImageClass: 'other_image w-100 h-100',
+            firstOtherImageSrc: 'img/squidgame1.jfif',
+            firstOtherImageAlt: 'Immagine di Squid Game 1',
             secondOtherImageSrc: 'img/squidgame2.jpg',
             secondOtherImageAlt: 'Immagine di Squid Game 2',
             thirdOtherImageSrc: 'img/squidgame3.jpg',
@@ -41,7 +43,7 @@ const app = new Vue(
             cardTextContent: 'The Squid Game series revolves around a contest where 456 players, all of whom are in deep financial debt, risk their lives to play a series of deadly children\'s games for the chance to win a 45.6$ billion prize.',
             cardBtnContent: 'Switch image',
             labelContent: 'Type here the index of the image',
-            imagesNames: '(Index: 1, 2, 3)',
+            imagesNames: '(Index: 1, 2, 3, 4)',
             inputContent: '',
             othersBtnContent: 'Confirm'
         },
@@ -60,44 +62,22 @@ const app = new Vue(
                 }
                 
             },
+            // Up: Cambiata la funzione, ora viene mostrata come immagine grande quella
+            // corrispondente all'index inserito nell'input dall'utente (da aggiungere effetto active alle thumbs)
             switchImage: function(){
-                // Effetto toggle: se la src dell'immagine grande non è quella che corrisponde con l'index che scrivo nella input, lo diventa. 
-                // La foto piccola che corrisponde alla mia scelta assumerà la src che aveva l'immagine grande
-                // Se scelgo Index 1, quella che era grande diventerà Index 1. Se riscrivo Index 1 si riscambiano
-                // Se ho scelto Index 1 e poi scrivo Index 3, la Index 1 diventa main e poi diventa Index 3, la vecchia Index 3 ora sarà main
-                // Questo switch è possibile in qualsiasi momento tenendo sempre conto della posizione attuale dell'immagine che voglio guardare
                 switch(this.inputContent){
                     case '1':
-                        if(this.mainImageSrc !== 'img/squidgame2.jpg'){
-                            this.secondOtherImageSrc = this.mainImageSrc;
-                            this.mainImageSrc = 'img/squidgame2.jpg';
-                            break;
-                        } else{
-                            this.mainImageSrc = this.secondOtherImageSrc;
-                            this.secondOtherImageSrc = 'img/squidgame2.jpg';
-                            break;
-                        }
+                        this.mainImageSrc = this.firstOtherImageSrc;
+                        break;
                     case '2':
-                        if(this.mainImageSrc !== 'img/squidgame3.jpg'){
-                            this.thirdOtherImageSrc = this.mainImageSrc;
-                            this.mainImageSrc = 'img/squidgame3.jpg';
-                            break;
-                        } else{
-                            this.mainImageSrc = this.thirdOtherImageSrc;
-                            this.thirdOtherImageSrc = 'img/squidgame3.jpg';
-                            break;
-                        }
+                        this.mainImageSrc = this.secondOtherImageSrc;
+                        break;
                     case '3':
-                        if(this.mainImageSrc !== 'img/squidgame4.jpg'){
-                            this.fourthOtherImageSrc = this.mainImageSrc;
-                            this.mainImageSrc = 'img/squidgame4.jpg';
-                            break;
-                        } else{
-                            this.mainImageSrc = this.fourthOtherImageSrc;
-                            this.fourthOtherImageSrc = 'img/squidgame4.jpg';
-                            break;
-                        }
-                        
+                        this.mainImageSrc = this.thirdOtherImageSrc;
+                        break;
+                    case '4':
+                        this.mainImageSrc = this.fourthOtherImageSrc;
+                        break;
                 }
             }
         }
