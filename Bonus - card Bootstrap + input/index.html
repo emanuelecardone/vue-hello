@@ -32,9 +32,9 @@
                     <a @click="showFormAndOthers" :href="cardBtnHref" :class="cardBtnClass">{{cardBtnContent}}</a>
                 </div>
                 <div :class="formClass">
-                    <label :for="labelFor" :class="labelClass">Email address</label>
-                    <input :type="inputType" :class="inputClass" :id="labelFor" :aria-describedby="inputAriaDescribedBy">
-                    <div :id="inputAriaDescribedBy" :class="helpClass">We'll never share your email with anyone else.</div>
+                    <label :for="labelFor" :class="labelClass">{{labelContent}}<br>{{imagesNames}}</label>
+                    <input :type="inputType" :class="inputClass" :id="labelFor" :aria-describedby="inputAriaDescribedBy" v-model="inputContent">
+                    <div :id="inputAriaDescribedBy" :class="helpClass">You're typing: {{inputContent}}</div>
                 </div>
                 <div :class="othersClass">
                     <div :class="fluidClass">

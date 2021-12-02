@@ -3,6 +3,7 @@ Vue.config.devtools = true;
 const app = new Vue(
     {
         el: '#root',
+
         data: {
             // Stili
             cardClass: 'card',
@@ -38,13 +39,25 @@ const app = new Vue(
             // Contenuti
             cardTitleContent: 'Squid Game',
             cardTextContent: 'The Squid Game series revolves around a contest where 456 players, all of whom are in deep financial debt, risk their lives to play a series of deadly children\'s games for the chance to win a 45.6$ billion prize.',
-            cardBtnContent: 'Switch image'
+            cardBtnContent: 'Switch image',
+            labelContent: 'Type here the name of the image',
+            imagesNames: '(Image 2, Image 3, Image 4)',
+            inputContent: ''
         },
+
         methods: {
             // Rimozione d-none al click di button
             showFormAndOthers: function(){
-                this.formClass = 'form_wrapper my-3';
-                this.othersClass = 'other_images_main_wrapper w-100 pb-2';
+                if(this.cardBtnContent === 'Switch image'){
+                    this.formClass = 'form_wrapper my-3';
+                    this.othersClass = 'other_images_main_wrapper w-100 pb-2';
+                    this.cardBtnContent = 'Close';
+                } else{
+                    this.formClass = 'form_wrapper my-3 d-none';
+                    this.othersClass = 'other_images_main_wrapper w-100 pb-2 d-none';
+                    this.cardBtnContent = 'Switch image';
+                }
+                
             }
         }
     }
